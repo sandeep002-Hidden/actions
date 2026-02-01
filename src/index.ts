@@ -6,7 +6,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 8080;
 // Routes
 app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Welcome to Express API' });
@@ -17,7 +17,7 @@ app.get('/health', (req: Request, res: Response) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0", () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
