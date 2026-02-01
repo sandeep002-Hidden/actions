@@ -18,7 +18,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd actions
-            git pull origin main
             docker compose down
+            git pull origin main
             docker compose up -d --build
-            
