@@ -11,6 +11,10 @@ const PORT = Number(process.env.PORT) || 8080;
 app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Welcome to Express API' });
 });
+// Routes
+app.get('/qqq', (req: Request, res: Response) => {
+  res.json({ message: 'Welcome to Express API qqq' });
+});
 
 app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
